@@ -1,0 +1,5 @@
+name: pyng
+version: 0.1.0
+author: @spacemany2k38
+description: Pure Python network ping with colorized output and rich statistics
+type: cli-tool

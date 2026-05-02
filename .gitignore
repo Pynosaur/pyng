@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+bazel-*
+MODULE.bazel.lock
+.bazelrc
+*.spec
+.DS_Store

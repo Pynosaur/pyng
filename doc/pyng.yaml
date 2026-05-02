@@ -1,0 +1,47 @@
+NAME: pyng
+VERSION: "0.1.0"
+DESCRIPTION: >
+  Pure Python network ping with colorized output and rich statistics.
+  Reimagines ping for the Pynosaur ecosystem with color-coded RTT
+  (green/yellow/red), jitter stats, DNS info, and a clean summary.
+  Supports ICMP echo (default) and TCP connect mode (-T) for
+  environments without root. Stdlib only, no dependencies.
+USAGE:
+  - "pyng HOST"
+  - "pyng -c COUNT HOST"
+  - "pyng -T [-p PORT] HOST"
+  - "pyng -q -c 10 HOST"
+  - "pyng --help"
+  - "pyng --version"
+OPTIONS:
+  - "-h, --help             Show help message"
+  - "-v, --version          Show version information"
+  - "-c COUNT               Number of pings to send (default: infinite)"
+  - "-i INTERVAL            Seconds between pings (default: 1.0)"
+  - "-t TIMEOUT             Timeout per ping in seconds (default: 2.0)"
+  - "-s SIZE                Payload size in bytes (default: 56)"
+  - "-T, --tcp              Use TCP connect mode (no root required)"
+  - "-p PORT                TCP port to ping (default: 80)"
+  - "-q, --quiet            Quiet mode — only show summary at the end"
+  - "--no-color             Disable colored output"
+EXAMPLES:
+  - "pyng example.com                         # ICMP ping (continuous)"
+  - "pyng -c 5 8.8.8.8                        # Send 5 pings"
+  - "pyng -T -p 443 example.com               # TCP ping on HTTPS port"
+  - "pyng -i 0.5 -t 1 example.com             # Fast interval, short timeout"
+  - "pyng -q -c 10 example.com                # Quiet mode, 10 pings"
+  - "pyng -s 1024 example.com                 # Large payload"
+  - "sudo pyng example.com                    # ICMP on Linux (needs root)"
+OUTPUT: >
+  Color-coded reply lines showing bytes, seq, TTL, and RTT. Green for
+  fast (<50ms), yellow for moderate (<150ms), red for slow or lost.
+  Final summary shows transmitted/received/loss with min/avg/max/jitter.
+  Exit code 0 on full success, 1 on any packet loss, 2 on DNS failure.
+AUTHOR: "@spacemany2k38"
+DATE: "2026-03-29"
+NOTES:
+  - "ICMP mode uses DGRAM sockets (macOS, no root) with RAW fallback (Linux, needs root)."
+  - "TCP mode measures TCP handshake time — works anywhere without privileges."
+  - "Jitter is reported as standard deviation of RTT values."
+  - "Ctrl+C stops pinging and prints the statistics summary."
+  - "Pure Python — no external dependencies."
