@@ -25,13 +25,13 @@ OPTIONS:
   - "-q, --quiet            Quiet mode — only show summary at the end"
   - "--no-color             Disable colored output"
 EXAMPLES:
-  - "pyng example.com                         # ICMP ping (continuous)"
-  - "pyng -c 5 8.8.8.8                        # Send 5 pings"
-  - "pyng -T -p 443 example.com               # TCP ping on HTTPS port"
-  - "pyng -i 0.5 -t 1 example.com             # Fast interval, short timeout"
-  - "pyng -q -c 10 example.com                # Quiet mode, 10 pings"
-  - "pyng -s 1024 example.com                 # Large payload"
-  - "sudo pyng example.com                    # ICMP on Linux (needs root)"
+  - "pyng example.com                # ICMP ping (continuous)"
+  - "pyng -c 5 8.8.8.8               # Send 5 pings"
+  - "pyng -T -p 443 example.com      # TCP ping on HTTPS port"
+  - "pyng -i 0.5 -t 1 example.com    # Fast interval, short timeout"
+  - "pyng -q -c 10 example.com       # Quiet mode, 10 pings"
+  - "pyng -s 1024 example.com        # Large payload"
+  - "sudo pyng example.com           # ICMP on Linux (needs root)"
 OUTPUT: >
   Color-coded reply lines showing bytes, seq, TTL, and RTT. Green for
   fast (<50ms), yellow for moderate (<150ms), red for slow or lost.
