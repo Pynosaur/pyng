@@ -1,5 +1,5 @@
 NAME: pyng
-VERSION: "0.1.0"
+VERSION: "0.1.1"
 DESCRIPTION: >
   Pure Python network ping with colorized output and rich statistics.
   Reimagines ping for the Pynosaur ecosystem with color-coded RTT
