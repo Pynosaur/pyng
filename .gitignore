@@ -12,3 +12,9 @@ MODULE.bazel.lock
 .bazelrc
 *.spec
 .DS_Store
+
+# Nuitka build artifacts
+main.dist/
+main.build/
+main.onefile-build/
+*-darwin-arm64
